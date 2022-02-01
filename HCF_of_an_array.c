@@ -1,35 +1,29 @@
 #include<stdio.h>
 int main()
 {
-    int i,j,h,n,a[100];
-    int hcf(int,int);
-    
-    scanf("%d
-",&n);
+    int n,scales[10],i,j,found=0,min=9999;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    scanf("%d",&scales[i]);
     for(i=0;i<n;i++)
     {
-        scanf("%d",& a[i]);
-    }
-        for(i=0;i<n-1;i++)
-        {
-            h=hcf(a[i],a[i+1]);
-            a[i+1]=h;
+        if(min>scales[i]) min=scales[i];
         }
-        
-          printf("%d",h);
-          //getch();
+           for(i=min;i>=1;i--)
+        {
+            found=0;
+            for(j=0;j<n;j++)
+    {
+         if(scales[j]%i!=0)
+            {
+               found=1; break;
+            }
+    }
+        if(found==0) 
+         {
+            printf("%d",i);
+             break;
+         }
+    }
+    return 0;
 }
-      int hcf(int a,int b)
-      { 
-          if(a%b==0)
-          {
-              return b;
-          }
-          else
-          {
-              return(hcf(b,a%b));
-          }
-      }
-      
-          
-          
