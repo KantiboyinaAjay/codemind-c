@@ -1,26 +1,23 @@
 #include<stdio.h>
-#include<math.h>
 int main()
 {
-    int n,temp=0,i,j,s=0,l=0;
+    int n,r=0,t=0,s=0,k;
     scanf("%d",&n);
-    int a = pow(n,2);
-    int z = n;
-    while(z!=0)
+    int x = n*n;
+    while(n>0)
     {
-        i = z%10;
-        s = s*10+i;
-        z = z/10;
+        k = n % 10;
+        s = s*10+k;
+        n = n/10;
     }
-    int b = pow(s,2);
-    int c=b;
-    while(c!=0)
+    s = s*s;
+    while(s>0)
     {
-        j = c%10;
-        l = l*10+j;
-        c = c/10;
+        k = s %10;
+        t = t * 10 + k;
+        s = s / 10;
     }
-    if(l==a)
+    if(t==x)
     {
         printf("True");
     }
